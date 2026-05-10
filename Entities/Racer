@@ -1,1 +1,51 @@
-
+{
+  "name": "Racer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Racer full name"
+    },
+    "number": {
+      "type": "string",
+      "description": "Car/racer number"
+    },
+    "photo": {
+      "type": "string",
+      "description": "Photo URL"
+    },
+    "race_id": {
+      "type": "string",
+      "description": "Associated race ID"
+    },
+    "odds": {
+      "type": "string",
+      "description": "Current odds e.g. +150, -200"
+    },
+    "odds_decimal": {
+      "type": "number",
+      "description": "Decimal odds for calculation"
+    },
+    "total_bets": {
+      "type": "number",
+      "default": 0,
+      "description": "Total amount bet on this racer"
+    },
+    "finish_position": {
+      "type": "number",
+      "description": "Final finish position"
+    },
+    "team": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "string",
+      "description": "Brief stats/bio"
+    }
+  },
+  "required": [
+    "name",
+    "race_id",
+    "odds"
+  ]
+}
