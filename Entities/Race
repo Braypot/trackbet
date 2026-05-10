@@ -1,1 +1,96 @@
-
+{
+  "name": "Race",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Race name/title"
+    },
+    "track_name": {
+      "type": "string",
+      "description": "Name of the track"
+    },
+    "race_type": {
+      "type": "string",
+      "enum": [
+        "outlaw_super_late_model",
+        "pro_late_model",
+        "modified",
+        "b_modified",
+        "c_modified",
+        "winged_sprint",
+        "non_wing_sprint",
+        "late_model_sportsman",
+        "truck_series",
+        "street_stock",
+        "pure_stock",
+        "sport_compact_a",
+        "sport_compact_b",
+        "sport_compact_c",
+        "mini_wedge",
+        "dwarf_car",
+        "figure_8",
+        "destruction_overload"
+      ],
+      "description": "Type/division of race"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "betting_open",
+        "betting_closed",
+        "live",
+        "finished",
+        "cancelled"
+      ],
+      "default": "upcoming"
+    },
+    "scheduled_start": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Scheduled start time"
+    },
+    "betting_opens": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "betting_closes": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cover_image": {
+      "type": "string",
+      "description": "Cover image URL"
+    },
+    "description": {
+      "type": "string"
+    },
+    "total_pool": {
+      "type": "number",
+      "default": 0,
+      "description": "Total money in betting pool"
+    },
+    "winner_racer_id": {
+      "type": "string",
+      "description": "ID of the winning racer"
+    },
+    "top3_racer_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of top 3 finishers"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "track_name",
+    "race_type",
+    "scheduled_start"
+  ]
+}
