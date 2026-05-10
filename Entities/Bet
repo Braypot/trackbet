@@ -1,1 +1,73 @@
-
+{
+  "name": "Bet",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the bettor"
+    },
+    "race_id": {
+      "type": "string",
+      "description": "Race ID"
+    },
+    "racer_id": {
+      "type": "string",
+      "description": "Racer ID bet on"
+    },
+    "racer_name": {
+      "type": "string"
+    },
+    "race_title": {
+      "type": "string"
+    },
+    "bet_type": {
+      "type": "string",
+      "enum": [
+        "winner",
+        "top3",
+        "head_to_head"
+      ],
+      "description": "Type of bet"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Bet amount in dollars"
+    },
+    "odds_at_placement": {
+      "type": "string",
+      "description": "Odds when bet was placed"
+    },
+    "odds_decimal_at_placement": {
+      "type": "number"
+    },
+    "potential_payout": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "won",
+        "lost",
+        "cancelled",
+        "refunded"
+      ],
+      "default": "pending"
+    },
+    "payout": {
+      "type": "number",
+      "default": 0
+    },
+    "opponent_racer_id": {
+      "type": "string",
+      "description": "For head-to-head bets"
+    }
+  },
+  "required": [
+    "user_email",
+    "race_id",
+    "racer_id",
+    "bet_type",
+    "amount"
+  ]
+}
